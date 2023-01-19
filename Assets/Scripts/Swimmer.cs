@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Swimmer : MonoBehaviour
@@ -15,6 +17,9 @@ public class Swimmer : MonoBehaviour
     [SerializeField] InputActionReference rightControllerSwimReference;
     [SerializeField] InputActionReference rightControllerVelocity;
     [SerializeField] Transform trackingReference;
+
+    [SerializeField] private List<Collider> handColliders;
+    [SerializeField] private List<Collider> groundColliders;
 
     Rigidbody _rigidbody;
     float _cooldownTimer;
@@ -36,16 +41,26 @@ public class Swimmer : MonoBehaviour
             Vector3 loaclVelocity = leftHandVelocity + rightHandVelocity;
             loaclVelocity *= -1;
 
-            if(loaclVelocity.sqrMagnitude > minForce * minForce)
-            {
-                Vector3 worldVelocity = trackingReference.TransformDirection(loaclVelocity);
-                _rigidbody.AddForce(worldVelocity* swimForce, ForceMode.Acceleration);
-                _cooldownTimer = 0f;
-            }
-            if(_rigidbody.velocity.sqrMagnitude > 0.01f)
-            {
-                _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
-            }
+            ForvardForce(loaclVelocity);
+            RevertForce();
+        }
+    }
+
+    private void ForvardForce(Vector3 loaclVelocity)
+    {
+        if (loaclVelocity.sqrMagnitude > minForce * minForce)
+        {
+            Vector3 worldVelocity = trackingReference.TransformDirection(loaclVelocity);
+            _rigidbody.AddForce(worldVelocity * swimForce, ForceMode.Acceleration);
+            _cooldownTimer = 0f;
+        }
+    }
+
+    private void RevertForce()
+    {
+        if (_rigidbody.velocity.sqrMagnitude > 0.01f)
+        {
+            _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
         }
     }
 }
