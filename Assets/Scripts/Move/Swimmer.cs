@@ -68,7 +68,7 @@ public class Swimmer : MonoBehaviour
             && leftHandOnGround)
         {
             loaclVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
-            loaclVelocity *= -1;
+            loaclVelocity *= -2;
             ForvardForce(loaclVelocity);
             RevertForce();
         }
@@ -78,7 +78,7 @@ public class Swimmer : MonoBehaviour
             && rightHandOnGround)
         {
             loaclVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
-            loaclVelocity *= -1;
+            loaclVelocity *= -2;
             ForvardForce(loaclVelocity);
             RevertForce();
         }
