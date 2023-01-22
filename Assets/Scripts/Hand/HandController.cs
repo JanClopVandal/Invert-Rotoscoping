@@ -11,6 +11,7 @@ public class HandController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<ActionBasedController>();
+        
     }
 
     
