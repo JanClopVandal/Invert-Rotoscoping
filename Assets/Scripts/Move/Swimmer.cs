@@ -27,8 +27,7 @@ public class Swimmer : MonoBehaviour
     [SerializeField] private List<Collider> groundColliders;
 
     [Header("Debug")]
-    [SerializeField] private TMP_Text tex;
-
+   
     private bool leftHandOnGround = false;
     public bool _leftHandOnGround
     {
