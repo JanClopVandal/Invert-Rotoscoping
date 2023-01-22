@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.XR.Interaction.Toolkit;
+using System;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Swimmer : MonoBehaviour
@@ -18,6 +20,8 @@ public class Swimmer : MonoBehaviour
     [SerializeField] InputActionReference rightControllerSwimReference;
     [SerializeField] InputActionReference rightControllerVelocity;
     [SerializeField] Transform trackingReference;
+    [SerializeField] ActionBasedController leftcontroller;
+    [SerializeField] ActionBasedController rightcontroller;
 
     [SerializeField] private List<Collider> handColliders;
     [SerializeField] private List<Collider> groundColliders;
@@ -46,12 +50,15 @@ public class Swimmer : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        Debug.Log(leftControllerVelocity.action.ReadValue<Vector3>());
+        bool leftHandPress = Convert.ToBoolean(leftcontroller.selectAction.action.ReadValue<float>());
+        bool rightHandPress = Convert.ToBoolean(rightcontroller.selectAction.action.ReadValue<float>());
         _cooldownTimer += Time.fixedDeltaTime;
         Vector3 loaclVelocity = new Vector3();
 
         if (_cooldownTimer > minTimeBetweenStrokes
-            && leftControllerSwimReference.action.IsPressed()
-            && rightControllerSwimReference.action.IsPressed()
+            && leftHandPress
+            && rightHandPress
             && leftHandOnGround && rightHandOnGround)
         {
             var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
@@ -64,7 +71,7 @@ public class Swimmer : MonoBehaviour
         }
 
         else if (_cooldownTimer > minTimeBetweenStrokes 
-            && leftControllerSwimReference.action.IsPressed()
+            && leftHandPress
             && leftHandOnGround)
         {
             loaclVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
@@ -74,7 +81,7 @@ public class Swimmer : MonoBehaviour
         }
 
         else if (_cooldownTimer > minTimeBetweenStrokes
-            && rightControllerSwimReference.action.IsPressed()
+            && rightHandPress
             && rightHandOnGround)
         {
             loaclVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
