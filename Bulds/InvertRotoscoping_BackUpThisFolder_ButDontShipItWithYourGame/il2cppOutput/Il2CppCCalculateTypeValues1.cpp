@@ -6271,10 +6271,6 @@ struct Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE  : public MonoBehaviour
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandVelocity_22;
 	// UnityEngine.Vector3 Swimmer::rightHandVelocity
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandVelocity_23;
-	// UnityEngine.Vector3 Swimmer::leftHandLastPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandLastPos_24;
-	// UnityEngine.Vector3 Swimmer::rightHandLastPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandLastPos_25;
 };
 
 // Unity.ThrowStub
