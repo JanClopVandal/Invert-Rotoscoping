@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
-
+using TMPro;
 [RequireComponent(typeof(Rigidbody))]
 public class Swimmer : MonoBehaviour
 {
@@ -26,6 +26,9 @@ public class Swimmer : MonoBehaviour
     [SerializeField] private List<Collider> handColliders;
     [SerializeField] private List<Collider> groundColliders;
 
+    [Header("Debug")]
+    [SerializeField] private TMP_Text tex;
+
     private bool leftHandOnGround = false;
     public bool _leftHandOnGround
     {
@@ -41,16 +44,23 @@ public class Swimmer : MonoBehaviour
 
     Rigidbody _rigidbody;
     float _cooldownTimer;
+
+    Vector3 leftHandVelocity = new Vector3();
+    Vector3 rightHandVelocity = new Vector3();
+    Vector3 leftHandLastPos = new Vector3();
+    Vector3 rightHandLastPos = new Vector3();
     #endregion Variables
 
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        leftHandLastPos = leftControllerVelocity.action.ReadValue<Vector3>();
+        rightHandLastPos = rightControllerVelocity.action.ReadValue<Vector3>();
     }
     private void FixedUpdate()
     {
-        Debug.Log(leftControllerVelocity.action.ReadValue<Vector3>());
+        
         bool leftHandPress = Convert.ToBoolean(leftcontroller.selectAction.action.ReadValue<float>());
         bool rightHandPress = Convert.ToBoolean(rightcontroller.selectAction.action.ReadValue<float>());
         _cooldownTimer += Time.fixedDeltaTime;
@@ -61,8 +71,9 @@ public class Swimmer : MonoBehaviour
             && rightHandPress
             && leftHandOnGround && rightHandOnGround)
         {
-            var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
-            var rightHandVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
+            
+            leftHandVelocity = (leftControllerVelocity.action.ReadValue<Vector3>() - leftHandLastPos) / Time.fixedDeltaTime;
+            rightHandVelocity = (rightControllerVelocity.action.ReadValue<Vector3>() - leftHandLastPos) / Time.fixedDeltaTime;
             loaclVelocity = leftHandVelocity + rightHandVelocity;
             loaclVelocity *= -1;
 
@@ -74,7 +85,7 @@ public class Swimmer : MonoBehaviour
             && leftHandPress
             && leftHandOnGround)
         {
-            loaclVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
+            loaclVelocity = (leftControllerVelocity.action.ReadValue<Vector3>() - leftHandLastPos) / Time.fixedDeltaTime;
             loaclVelocity *= -2;
             ForvardForce(loaclVelocity);
             RevertForce();
@@ -84,11 +95,14 @@ public class Swimmer : MonoBehaviour
             && rightHandPress
             && rightHandOnGround)
         {
-            loaclVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
+            loaclVelocity = (rightControllerVelocity.action.ReadValue<Vector3>() - leftHandLastPos) / Time.fixedDeltaTime;
             loaclVelocity *= -2;
             ForvardForce(loaclVelocity);
             RevertForce();
         }
+
+        leftHandLastPos = leftControllerVelocity.action.ReadValue<Vector3>();
+        rightHandLastPos = rightControllerVelocity.action.ReadValue<Vector3>();
     }
 
     private void ForvardForce(Vector3 loaclVelocity)
