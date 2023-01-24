@@ -6,6 +6,7 @@ public class ZoneDetecte : MonoBehaviour
     [SerializeField] private string materialParametr = "_BaseColor"; //_Color 
     [SerializeField] private float speed = 0.1f;
     private GameObject textObj;
+    private Renderer renderCom;
     private Material changeMat;
     private float target = 0;
     private float current = 0;
@@ -13,7 +14,9 @@ public class ZoneDetecte : MonoBehaviour
     private void Awake()
     {
         textObj = transform.GetChild(0).gameObject;
-        changeMat = textObj.GetComponent<Renderer>().sharedMaterial;
+        renderCom = textObj.GetComponent<Renderer>();
+        //changeMat = textObj.GetComponent<Renderer>().material;
+        //textObj.GetComponent<Renderer>().sharedMaterial = changeMat;
         Debug.Log(changeMat);
     }
     private void Update()
@@ -42,8 +45,9 @@ public class ZoneDetecte : MonoBehaviour
     void DoAnimation()
     {
         current += Mathf.Lerp(-speed, speed, target);
-        current = Mathf.Clamp(current, 0f,1f);
-        changeMat.SetColor(materialParametr, new Color(1, 0,0 , current));
+        current = Mathf.Clamp(current, 0f, 1f);
+        renderCom.material.color = new Color(1, 0, 0, current);
+        //renderCom.material.SetColor(materialParametr, new Color(1, 0,0 , current));
 
         Debug.Log(current);
         //changeMat.SetFloat(materialParametr, current);
