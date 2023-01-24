@@ -148,6 +148,9 @@ Library: lib_burst_generated
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
 --compilation-defines=UNITY_INPUT_SYSTEM
 --compilation-defines=XR_MGMT_GTE_320
+--compilation-defines=UNITY_TIMELINE_EXIST
+--compilation-defines=UNITY_PHYSICS_EXIST
+--compilation-defines=UNITY_PHYSICS2D_EXIST
 --compilation-defines=INCLUDE_PHYSICS_MODULE
 --compilation-defines=INCLUDE_UGUI
 --compilation-defines=INCLUDE_INPUT_SYSTEM
@@ -167,6 +170,7 @@ Library: lib_burst_generated
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.XR.Oculus.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
+--root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\FMODUnity.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
@@ -190,6 +194,7 @@ Library: lib_burst_generated
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.Services.Core.Registration.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll
+--root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\FMODUnityResonance.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
 --root-assembly=D:\Projects\unityProjects\Invert Rotoscoping\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.RuntimeDebugger.dll

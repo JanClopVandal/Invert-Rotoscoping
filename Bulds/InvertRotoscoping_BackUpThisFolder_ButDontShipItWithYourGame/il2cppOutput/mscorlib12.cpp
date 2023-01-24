@@ -411,10 +411,6 @@ struct IntrinsicAttribute_t5A57DDBE51F2CE42F351B6D3ED0785692767DA55;
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB;
 // System.Runtime.CompilerServices.IsByRefLikeAttribute
 struct IsByRefLikeAttribute_t7FCB5151A5BC5580E3E80CC5688131858D1E8884;
-// System.Runtime.CompilerServices.IsReadOnlyAttribute
-struct IsReadOnlyAttribute_t0AC14E6EAFD80CA5102858F6F8DCB15B50B678A3;
-// System.Runtime.CompilerServices.IteratorStateMachineAttribute
-struct IteratorStateMachineAttribute_t70324530BC47D8A0DCB1EA2CC645498AC2EF0019;
 // System.Runtime.InteropServices.MarshalAsAttribute
 struct MarshalAsAttribute_t01C6F0A583661ACCA85234683F50A4D4F82C9B7E;
 // System.Runtime.InteropServices.MarshalDirectiveException
@@ -1608,11 +1604,6 @@ struct InternalFE_tABC32B0010525375378D0B5756E5A35D4C17D6F7  : public RuntimeObj
 	int32_t ___FEserializerTypeEnum_3;
 };
 
-// System.Runtime.CompilerServices.IsVolatile
-struct IsVolatile_t0B37449B03529321B254AC376B91D2F56220098C  : public RuntimeObject
-{
-};
-
 // System.Runtime.InteropServices.Marshal
 struct Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7  : public RuntimeObject
 {
@@ -2701,11 +2692,6 @@ struct IsByRefLikeAttribute_t7FCB5151A5BC5580E3E80CC5688131858D1E8884  : public 
 {
 };
 
-// System.Runtime.CompilerServices.IsReadOnlyAttribute
-struct IsReadOnlyAttribute_t0AC14E6EAFD80CA5102858F6F8DCB15B50B678A3  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
-{
-};
-
 // System.Runtime.InteropServices.MarshalAsAttribute
 struct MarshalAsAttribute_t01C6F0A583661ACCA85234683F50A4D4F82C9B7E  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
@@ -3110,11 +3096,6 @@ struct GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC
 {
 	// System.IntPtr System.Runtime.InteropServices.GCHandle::handle
 	intptr_t ___handle_0;
-};
-
-// System.Runtime.CompilerServices.IteratorStateMachineAttribute
-struct IteratorStateMachineAttribute_t70324530BC47D8A0DCB1EA2CC645498AC2EF0019  : public StateMachineAttribute_t9D7900B1B0E39C142A948AFD6025BBE3CE09AA76
-{
 };
 
 // System.Reflection.MethodInfo
@@ -25147,6 +25128,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Marshal_PtrToStructure_m235E14
 	using namespace il2cpp::icalls;
 	return ((Marshal_PtrToStructure_m235E141E21BFB69A01B07DDDF1702BA7D5723AC3_ftn)mscorlib::System::Runtime::InteropServices::Marshal::PtrToStructure) (___ptr0, ___structureType1);
 }
+// System.Byte System.Runtime.InteropServices.Marshal::ReadByte(System.IntPtr,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t Marshal_ReadByte_m40222A943AEA82FBFAC5D4881CABD56DFFBA7085 (intptr_t ___ptr0, int32_t ___ofs1, const RuntimeMethod* method) 
+{
+	{
+		intptr_t L_0 = ___ptr0;
+		void* L_1;
+		L_1 = IntPtr_op_Explicit_m2728CBA081E79B97DDCF1D4FAD77B309CA1E94BF(L_0, NULL);
+		int32_t L_2 = ___ofs1;
+		int32_t L_3 = *((uint8_t*)((void*)il2cpp_codegen_add((intptr_t)L_1, L_2)));
+		return (uint8_t)L_3;
+	}
+}
 // System.Int32 System.Runtime.InteropServices.Marshal::SizeOf(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Marshal_SizeOf_mED64846722033D6F60C2973CA604B7C2D7D4A1B7 (Type_t* ___t0, const RuntimeMethod* method) 
 {
@@ -25160,6 +25153,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_StructureToPtr_mA1B296E1739D0481
 	typedef void (*Marshal_StructureToPtr_mA1B296E1739D0481FACE3D9B43D94FF86091DD4E_ftn) (RuntimeObject*, intptr_t, bool);
 	using namespace il2cpp::icalls;
 	((Marshal_StructureToPtr_mA1B296E1739D0481FACE3D9B43D94FF86091DD4E_ftn)mscorlib::System::Runtime::InteropServices::Marshal::StructureToPtr) (___structure0, ___ptr1, ___fDeleteOld2);
+}
+// System.IntPtr System.Runtime.InteropServices.Marshal::UnsafeAddrOfPinnedArrayElement(System.Array,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Marshal_UnsafeAddrOfPinnedArrayElement_m35AEE146B25CBECB4BFC62CF17B544FB64B6FB06 (RuntimeArray* ___arr0, int32_t ___index1, const RuntimeMethod* method) 
+{
+	typedef intptr_t (*Marshal_UnsafeAddrOfPinnedArrayElement_m35AEE146B25CBECB4BFC62CF17B544FB64B6FB06_ftn) (RuntimeArray*, int32_t);
+	using namespace il2cpp::icalls;
+	return ((Marshal_UnsafeAddrOfPinnedArrayElement_m35AEE146B25CBECB4BFC62CF17B544FB64B6FB06_ftn)mscorlib::System::Runtime::InteropServices::Marshal::UnsafeAddrOfPinnedArrayElement) (___arr0, ___index1);
 }
 // System.Delegate System.Runtime.InteropServices.Marshal::GetDelegateForFunctionPointerInternal(System.IntPtr,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Marshal_GetDelegateForFunctionPointerInternal_mAB864000CE18BA981CE100946826A59265E5B7BF (intptr_t ___ptr0, Type_t* ___t1, const RuntimeMethod* method) 
@@ -26295,47 +26295,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsByRefLikeAttribute__ctor_m3113416985C9
 {
 	{
 		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void System.Runtime.CompilerServices.IsReadOnlyAttribute::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsReadOnlyAttribute__ctor_mF0CD9218BE9F87B4AD5A908108726C764B9218F5 (IsReadOnlyAttribute_t0AC14E6EAFD80CA5102858F6F8DCB15B50B678A3* __this, const RuntimeMethod* method) 
-{
-	{
-		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void System.Runtime.CompilerServices.IteratorStateMachineAttribute::.ctor(System.Type)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IteratorStateMachineAttribute__ctor_m074C981C44F1E0311AB137F7DFBF6C596022009D (IteratorStateMachineAttribute_t70324530BC47D8A0DCB1EA2CC645498AC2EF0019* __this, Type_t* ___stateMachineType0, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = ___stateMachineType0;
-		StateMachineAttribute__ctor_m6BB447A85F13880965BFB0A3037D116765F465F1(__this, L_0, NULL);
 		return;
 	}
 }
