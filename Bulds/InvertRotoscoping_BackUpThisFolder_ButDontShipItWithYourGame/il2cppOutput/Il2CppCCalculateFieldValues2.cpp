@@ -190,6 +190,8 @@ struct PlyHeader_tC8F0331F04A939317F3F4D9E18AEA5FEC4C6D6BD;
 struct Regex_tE773142C2BE45C5D362B0F815AFF831707A51772;
 // UnityEngine.RenderTexture
 struct RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27;
+// UnityEngine.Renderer
+struct Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF;
 // UnityEngine.Rigidbody
 struct Rigidbody_t268697F5A994213ED97393309870968BC1C7393C;
 // System.String
@@ -4049,36 +4051,38 @@ struct Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE  : public MonoBehaviour
 	float ___minForce_6;
 	// System.Single Swimmer::minTimeBetweenStrokes
 	float ___minTimeBetweenStrokes_7;
+	// System.Single Swimmer::maxForce
+	float ___maxForce_8;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::leftControllerSwimReference
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerSwimReference_8;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerSwimReference_9;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::leftControllerVelocity
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerVelocity_9;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerVelocity_10;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::rightControllerSwimReference
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerSwimReference_10;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerSwimReference_11;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::rightControllerVelocity
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerVelocity_11;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerVelocity_12;
 	// UnityEngine.Transform Swimmer::trackingReference
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingReference_12;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingReference_13;
 	// UnityEngine.XR.Interaction.Toolkit.ActionBasedController Swimmer::leftcontroller
-	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___leftcontroller_13;
+	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___leftcontroller_14;
 	// UnityEngine.XR.Interaction.Toolkit.ActionBasedController Swimmer::rightcontroller
-	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___rightcontroller_14;
+	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___rightcontroller_15;
 	// System.Collections.Generic.List`1<UnityEngine.Collider> Swimmer::handColliders
-	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___handColliders_15;
+	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___handColliders_16;
 	// System.Collections.Generic.List`1<UnityEngine.Collider> Swimmer::groundColliders
-	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___groundColliders_16;
+	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___groundColliders_17;
 	// System.Boolean Swimmer::leftHandOnGround
-	bool ___leftHandOnGround_17;
+	bool ___leftHandOnGround_18;
 	// System.Boolean Swimmer::rightHandOnGround
-	bool ___rightHandOnGround_18;
+	bool ___rightHandOnGround_19;
 	// UnityEngine.Rigidbody Swimmer::_rigidbody
-	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ____rigidbody_19;
+	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ____rigidbody_20;
 	// System.Single Swimmer::_cooldownTimer
-	float ____cooldownTimer_20;
+	float ____cooldownTimer_21;
 	// UnityEngine.Vector3 Swimmer::leftHandVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandVelocity_21;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandVelocity_22;
 	// UnityEngine.Vector3 Swimmer::rightHandVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandVelocity_22;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandVelocity_23;
 };
 
 // UnityEngine.SpatialTracking.TrackedPoseDriver
@@ -4109,12 +4113,14 @@ struct ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792  : public MonoBehav
 	float ___speed_5;
 	// UnityEngine.GameObject ZoneDetecte::textObj
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___textObj_6;
+	// UnityEngine.Renderer ZoneDetecte::renderCom
+	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___renderCom_7;
 	// UnityEngine.Material ZoneDetecte::changeMat
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___changeMat_7;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___changeMat_8;
 	// System.Single ZoneDetecte::target
-	float ___target_8;
+	float ___target_9;
 	// System.Single ZoneDetecte::current
-	float ___current_9;
+	float ___current_10;
 };
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -4430,18 +4436,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6142[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6143[2] = 
 {
 	static_cast<int32_t>(offsetof(GroundHandDetecte_tA7D1891C54CEC88690B7194EC6EB16CF8DF7B5AC, ___swimmer_4)),static_cast<int32_t>(offsetof(GroundHandDetecte_tA7D1891C54CEC88690B7194EC6EB16CF8DF7B5AC, ___handIndex_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6145[19] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6145[20] = 
 {
-	static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___swimForce_4)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___dragForce_5)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___minForce_6)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___minTimeBetweenStrokes_7)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftControllerSwimReference_8)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftControllerVelocity_9)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightControllerSwimReference_10)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightControllerVelocity_11)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___trackingReference_12)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftcontroller_13)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightcontroller_14)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___handColliders_15)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___groundColliders_16)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftHandOnGround_17)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightHandOnGround_18)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ____rigidbody_19)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ____cooldownTimer_20)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftHandVelocity_21)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightHandVelocity_22)),};
+	static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___swimForce_4)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___dragForce_5)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___minForce_6)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___minTimeBetweenStrokes_7)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___maxForce_8)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftControllerSwimReference_9)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftControllerVelocity_10)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightControllerSwimReference_11)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightControllerVelocity_12)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___trackingReference_13)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftcontroller_14)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightcontroller_15)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___handColliders_16)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___groundColliders_17)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftHandOnGround_18)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightHandOnGround_19)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ____rigidbody_20)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ____cooldownTimer_21)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___leftHandVelocity_22)),static_cast<int32_t>(offsetof(Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE, ___rightHandVelocity_23)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6147[10] = 
 {
 	0,0,0,0,0,0,0,0,0,0,};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6148[9] = 
 {
 	0,0,0,0,0,0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6151[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6151[7] = 
 {
-	static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___materialParametr_4)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___speed_5)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___textObj_6)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___changeMat_7)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___target_8)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___current_9)),};
+	static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___materialParametr_4)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___speed_5)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___textObj_6)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___renderCom_7)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___changeMat_8)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___target_9)),static_cast<int32_t>(offsetof(ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792, ___current_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6152[3] = 
 {
 	static_cast<int32_t>(offsetof(PlyResult_t0FB0EABB9D626347DF3B9B18499E398E868505E8, ___Vertices_0)),static_cast<int32_t>(offsetof(PlyResult_t0FB0EABB9D626347DF3B9B18499E398E868505E8, ___Triangles_1)),static_cast<int32_t>(offsetof(PlyResult_t0FB0EABB9D626347DF3B9B18499E398E868505E8, ___Colors_2)),};

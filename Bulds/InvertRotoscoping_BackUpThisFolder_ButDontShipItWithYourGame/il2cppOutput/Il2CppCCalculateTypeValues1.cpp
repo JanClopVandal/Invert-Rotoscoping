@@ -646,6 +646,8 @@ struct RegexRunner_t4D255CE33E7985A04AF21F0B57984D6C65615B3B;
 struct RegexRunnerFactory_t72373B672C7D8785F63516DDD88834F286AF41E7;
 // UnityEngine.RenderTexture
 struct RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27;
+// UnityEngine.Renderer
+struct Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF;
 // UnityEngine.Rigidbody
 struct Rigidbody_t268697F5A994213ED97393309870968BC1C7393C;
 // System.Runtime.Serialization.SafeSerializationManager
@@ -13879,36 +13881,38 @@ struct Swimmer_t2FEE916089BFA96DB067991A514771BAFF2178DE  : public MonoBehaviour
 	float ___minForce_6;
 	// System.Single Swimmer::minTimeBetweenStrokes
 	float ___minTimeBetweenStrokes_7;
+	// System.Single Swimmer::maxForce
+	float ___maxForce_8;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::leftControllerSwimReference
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerSwimReference_8;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerSwimReference_9;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::leftControllerVelocity
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerVelocity_9;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___leftControllerVelocity_10;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::rightControllerSwimReference
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerSwimReference_10;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerSwimReference_11;
 	// UnityEngine.InputSystem.InputActionReference Swimmer::rightControllerVelocity
-	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerVelocity_11;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___rightControllerVelocity_12;
 	// UnityEngine.Transform Swimmer::trackingReference
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingReference_12;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingReference_13;
 	// UnityEngine.XR.Interaction.Toolkit.ActionBasedController Swimmer::leftcontroller
-	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___leftcontroller_13;
+	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___leftcontroller_14;
 	// UnityEngine.XR.Interaction.Toolkit.ActionBasedController Swimmer::rightcontroller
-	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___rightcontroller_14;
+	ActionBasedController_tB9D8E7E013191571EA5507EA68057414B6969A68* ___rightcontroller_15;
 	// System.Collections.Generic.List`1<UnityEngine.Collider> Swimmer::handColliders
-	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___handColliders_15;
+	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___handColliders_16;
 	// System.Collections.Generic.List`1<UnityEngine.Collider> Swimmer::groundColliders
-	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___groundColliders_16;
+	List_1_t58F89DEDCD7DABB0CFB009AAD9C0CFE061592252* ___groundColliders_17;
 	// System.Boolean Swimmer::leftHandOnGround
-	bool ___leftHandOnGround_17;
+	bool ___leftHandOnGround_18;
 	// System.Boolean Swimmer::rightHandOnGround
-	bool ___rightHandOnGround_18;
+	bool ___rightHandOnGround_19;
 	// UnityEngine.Rigidbody Swimmer::_rigidbody
-	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ____rigidbody_19;
+	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ____rigidbody_20;
 	// System.Single Swimmer::_cooldownTimer
-	float ____cooldownTimer_20;
+	float ____cooldownTimer_21;
 	// UnityEngine.Vector3 Swimmer::leftHandVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandVelocity_21;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftHandVelocity_22;
 	// UnityEngine.Vector3 Swimmer::rightHandVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandVelocity_22;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightHandVelocity_23;
 };
 
 // Unity.ThrowStub
@@ -14012,12 +14016,14 @@ struct ZoneDetecte_t2B9006CE6097D6F59C896906280B2A032C3FD792  : public MonoBehav
 	float ___speed_5;
 	// UnityEngine.GameObject ZoneDetecte::textObj
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___textObj_6;
+	// UnityEngine.Renderer ZoneDetecte::renderCom
+	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___renderCom_7;
 	// UnityEngine.Material ZoneDetecte::changeMat
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___changeMat_7;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___changeMat_8;
 	// System.Single ZoneDetecte::target
-	float ___target_8;
+	float ___target_9;
 	// System.Single ZoneDetecte::current
-	float ___current_9;
+	float ___current_10;
 };
 
 // UnityEngine.XR.OpenXR.Features.Interactions.EyeGazeInteraction/EyeGazeDevice

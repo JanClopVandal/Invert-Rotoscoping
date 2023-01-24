@@ -14,6 +14,7 @@ public class Swimmer : MonoBehaviour
     [SerializeField] private float dragForce = 1f;
     [SerializeField] private float minForce;
     [SerializeField] private float minTimeBetweenStrokes;
+    [SerializeField] private float maxForce = 0.5f;
     [Header("Reference")]
     [SerializeField] InputActionReference leftControllerSwimReference;
     [SerializeField] InputActionReference leftControllerVelocity;
@@ -73,6 +74,7 @@ public class Swimmer : MonoBehaviour
             loaclVelocity = leftHandVelocity + rightHandVelocity;
             loaclVelocity *= -1;
 
+
             ForvardForce(loaclVelocity);
             RevertForce();
         }
@@ -103,8 +105,11 @@ public class Swimmer : MonoBehaviour
 
     private void ForvardForce(Vector3 loaclVelocity)
     {
+
         if (loaclVelocity.sqrMagnitude > minForce * minForce)
         {
+            loaclVelocity = Vector3.ClampMagnitude(loaclVelocity, maxForce);
+            Debug.Log(loaclVelocity);
             Vector3 worldVelocity = trackingReference.TransformDirection(loaclVelocity);
             _rigidbody.AddForce(worldVelocity * swimForce, ForceMode.Acceleration);
             _cooldownTimer = 0f;
