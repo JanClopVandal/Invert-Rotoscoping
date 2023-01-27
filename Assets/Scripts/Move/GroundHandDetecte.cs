@@ -19,6 +19,7 @@ public class GroundHandDetecte : MonoBehaviour
     }
     private void ChangeState(bool newState)
     {
+        Debug.Log("Collider");
         if(handIndex == 0)
         {
             swimmer._leftHandOnGround = newState;
